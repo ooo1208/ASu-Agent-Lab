@@ -14,6 +14,8 @@
 
 [章节与实验](docs/CHAPTERS.md) · [来源和许可](SOURCES.md) · [缺口对比矩阵](docs/COMPARISON.md) · [验收记录](docs/VERIFICATION.md) · [详细启动说明](docs/运行与部署.md)
 
+配套学习工程已独立整理：[Agent-Learning 总入口](https://github.com/ooo1208/Agent-Learning) · [基础项目与本工程的对应关系](docs/LEARNING_PROJECTS.md)。
+
 ## 能实际演示什么
 
 | 场景 | 实现与证据 |
