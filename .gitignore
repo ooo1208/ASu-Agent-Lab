@@ -128,7 +128,7 @@ ehthumbs_vista.db
 *.pid
 *.pid.lock
 .local/
-data/
+/data/
 target/
 *.sqlite3-*
 *.db-*

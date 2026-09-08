@@ -33,6 +33,25 @@
 
 验收进程已停止，文件库和日志位于被 Git 忽略的 `target/`，未加入公开源码。
 
+## 真实 HTTP MCP 和报价链路
+
+后续执行了 `tests/lab/test_real_erp_mcp.py`。该测试自行启动独立 Java JAR、HTTP FastMCP 服务和报价服务，使用全新的专用 H2 文件库，结束后自动关闭所有进程。
+
+- 8 个 MCP 工具均通过真实 FastMCP Client → HTTP MCP → Java HTTP API 调用验证。
+- 创建订单省略编号/时间后的重试返回同一 ID、编号和时间；只改备注保留全部明细；不同参数重用幂等键被拒绝。
+- `1234567890123456.78` 经创建工具、Java DECIMAL 列和 MCP 响应往返后逐字符一致。MCP 的 JSON 响应解析使用 `parse_float=str`，避免中途转为二进制浮点数。
+- 9 张合成报价页均可通过 HTTP 抓取，所有零件和供应商名称/ID 与 ERP 种子一致；配置化映射接口返回正确 URL。
+- Java API 缺少服务密钥时返回 401。
+
+执行方式（先完成 Java 打包，Python 依赖在根项目环境中）：
+
+```powershell
+$env:RUN_REAL_ERP_MCP = '1'
+python -m pytest tests/lab/test_real_erp_mcp.py tests/lab/test_mcp_orders.py -q
+```
+
+实测结果：新增真实服务验收 **11 项通过**，连同已有 MCP 请求精度/部分更新测试共 **13 passed**；有一条依赖库的 Starlette TestClient 弃用提示。未设置开关时，真实服务测试默认跳过，不会意外启动进程或触及现有服务。
+
 ## 未验证范围
 
 未连接真实 MySQL，未运行 Docker 镜像，也未接入真实企业数据、物流、付款或模型服务。MySQL profile 和 Dockerfile 已提供，但 H2 结果不能直接当作这些环境的通过证明。此模块以本地教学与业务工具联调为目标，吞吐、权限分级及大型数据集查询需要另行验收。

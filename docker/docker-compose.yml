@@ -1,0 +1,5 @@
+# Compatibility entry point for running docker compose inside docker/.
+# Docker Compose >= 2.20 is required for include.
+name: asu-agent-lab-live-infra
+include:
+  - path: compose.live-infra.yml

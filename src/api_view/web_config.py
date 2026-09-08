@@ -32,18 +32,18 @@ JWT_EXPIRE_HOURS = int(os.getenv("JWT_EXPIRE_HOURS", "12"))
 # 项目路径配置
 # ============================================================
 # 项目根目录
-PROJECT_DIR = Path(__file__).parent.parent
+PROJECT_DIR = Path(__file__).resolve().parents[2]
 
 # Agent 相关代码路径
 AGENT_DIR = PROJECT_DIR / "src" / "agent"
 # 技能目录（沙箱中的路径，与 sandbox_agent.py 保持一致）
-SKILLS_PATH = "/workspace/skills"
+SKILLS_PATH = "/skills"
 # 内存文件（AGENTS.md）
 MEMORY_PATH = "/AGENTS.md"
 # 子代理配置文件（在 src 目录下）
-SUBAGENTS_CONFIG = PROJECT_DIR / "src" / "subagents.yaml"
+SUBAGENTS_CONFIG = AGENT_DIR / "subagents" / "configs"
 # AGENTS.md 文件路径
-AGENTS_MD_PATH = PROJECT_DIR / "src" / "AGENTS.md"
+AGENTS_MD_PATH = AGENT_DIR / "memory" / "AGENTS.md"
 
 # ============================================================
 # 服务配置

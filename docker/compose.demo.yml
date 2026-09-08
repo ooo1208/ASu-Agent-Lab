@@ -1,0 +1,81 @@
+name: asu-agent-lab-demo
+
+services:
+  erp:
+    build:
+      context: ../erp-service
+      dockerfile: Dockerfile
+    init: true
+    restart: unless-stopped
+    environment:
+      ERP_BIND_ADDRESS: 0.0.0.0
+      ERP_PORT: "8080"
+      ERP_SEED_ENABLED: "true"
+      ERP_API_KEY: ${ERP_API_KEY:-}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - erp-data:/app/data
+
+  demo-api:
+    image: asu-agent-lab-python:local
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.python
+    init: true
+    restart: unless-stopped
+    depends_on:
+      erp:
+        condition: service_started
+    environment:
+      ASU_DATA_DIR: /app/data
+      ASU_RELEASE: docker-demo
+      ERP_API_BASE_URL: http://erp:8080/api
+      ERP_API_KEY: ${ERP_API_KEY:-}
+    ports:
+      - "127.0.0.1:8090:8090"
+    volumes:
+      - asu-data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  worker:
+    image: asu-agent-lab-python:local
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.python
+    init: true
+    restart: unless-stopped
+    depends_on:
+      demo-api:
+        condition: service_healthy
+    command: ["python", "-m", "asu_eval.worker", "--db", "/app/data/evaluation.sqlite3", "--delivery", "offline"]
+    environment:
+      ASU_DATA_DIR: /app/data
+    volumes:
+      - asu-data:/app/data
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.frontend
+    init: true
+    restart: unless-stopped
+    depends_on:
+      demo-api:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:5173:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8080/_health"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  asu-data:
+  erp-data:

@@ -1,0 +1,51 @@
+# Optional infrastructure for a host-run live Agent. This is not a production deployment.
+name: asu-agent-lab-live-infra
+
+services:
+  sandbox-image:
+    build:
+      context: ./sandbox-image
+    image: asu-agent-sandbox:v1
+    entrypoint: ["/bin/true"]
+    restart: "no"
+
+  mongodb:
+    image: mongo:7.0
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: asu_agent
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  opensandbox-server:
+    image: opensandbox/server:latest
+    restart: unless-stopped
+    depends_on:
+      sandbox-image:
+        condition: service_completed_successfully
+    ports:
+      - "127.0.0.1:8100:8090"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./opensandbox.toml:/etc/opensandbox/config.toml:ro
+      - opensandbox-data:/root/.opensandbox
+    environment:
+      SANDBOX_CONFIG_PATH: /etc/opensandbox/config.toml
+      OPENSANDBOX_INSECURE_SERVER: "YES"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health', timeout=3)"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+volumes:
+  mongodb-data:
+  opensandbox-data:

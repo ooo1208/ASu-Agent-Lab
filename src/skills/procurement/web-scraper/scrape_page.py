@@ -4,8 +4,8 @@
 从沙箱内直接发起 HTTP 请求，解析 HTML 并转换为 Markdown 保存。
 
 用法:
-    python scrape_page.py --url "http://127.0.0.1/spark-plug-bosch.html"
-    python scrape_page.py --url "http://127.0.0.1/spark-plug-bosch.html" --output "/analysis/temp/result.md"
+    python scrape_page.py --url "http://host.docker.internal:8086/supplier-1-part-1.html"
+    python scrape_page.py --url "http://host.docker.internal:8086/supplier-1-part-1.html" --output "/analysis/temp/result.md"
 """
 
 from __future__ import annotations

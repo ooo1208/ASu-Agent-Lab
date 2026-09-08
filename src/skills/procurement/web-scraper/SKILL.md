@@ -14,7 +14,7 @@ metadata:
 
 ## 适用场景
 
-- 抓取本地内网页面（如 `https://unify-underhand-aliens.ngrok-free.dev/...`），外部代理服务无法访问
+- 抓取本地内网页面（如 `http://host.docker.internal:8086/`），外部代理服务无法访问
 - 需要将网页内容保存为 Markdown 文件供后续分析
 - 批量抓取产品/供应商页面
 
@@ -23,11 +23,11 @@ metadata:
 ```bash
 # 基本用法（自动生成输出文件名）
 python /skills/procurement/web-scraper/scrape_page.py \
-  --url "https://unify-underhand-aliens.ngrok-free.dev/spark-plug.html"
+  --url "http://host.docker.internal:8086/supplier-1-part-1.html"
 
 # 指定输出路径
 python /skills/procurement/web-scraper/scrape_page.py \
-  --url "https://unify-underhand-aliens.ngrok-free.dev/spark-plug.html" \
+  --url "http://host.docker.internal:8086/supplier-1-part-1.html" \
   --output "/analysis/temp/bosch-spark-plug.md"
 ```
 
@@ -48,7 +48,7 @@ python /skills/procurement/web-scraper/scrape_page.py \
 ## 示例
 
 ```
-用户: 帮我抓取 https://unify-underhand-aliens.ngrok-free.dev/spark-plug.html 的内容并保存
+用户: 帮我抓取 http://host.docker.internal:8086/supplier-1-part-1.html 的内容并保存
 助手: (执行 python scrape_page.py --url "...") → 保存到 /analysis/temp/spark-plug-bosch.md
 ```
 

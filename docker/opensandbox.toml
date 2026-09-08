@@ -1,0 +1,40 @@
+# ============================================================
+# OpenSandbox Server 配置（Docker 运行时）
+# 本地配置与验收说明：../docs/运行与部署.md
+# 修改后执行：docker compose restart
+# ============================================================
+
+[server]
+host = "0.0.0.0"
+port = 8090
+# api_key = "your-secret-key"   # 需要鉴权时取消注释并设置；客户端需带 OPEN-SANDBOX-API-KEY 头
+
+[log]
+level = "INFO"
+
+[runtime]
+type = "docker"
+# execd：沙箱引导组件（国内使用阿里云镜像源）
+execd_image = "sandbox-registry.cn-zhangjiakou.cr.aliyuncs.com/opensandbox/execd:v1.0.22"
+
+[egress]
+# 网络策略组件（创建带 network_policy 的沙箱时需要）
+image = "sandbox-registry.cn-zhangjiakou.cr.aliyuncs.com/opensandbox/egress:v1.1.6"
+readiness_timeout_seconds = 30.0
+
+[docker]
+network_mode = "bridge"
+# server 跑在容器里时，bridge 模式沙箱端点通过 host.docker.internal 可达
+host_ip = "host.docker.internal"
+port_range_min = 40000
+port_range_max = 60000
+drop_capabilities = ["AUDIT_WRITE", "MKNOD", "NET_ADMIN", "NET_RAW", "SYS_ADMIN", "SYS_MODULE", "SYS_PTRACE", "SYS_TIME", "SYS_TTY_CONFIG"]
+no_new_privileges = true
+pids_limit = 4096
+
+[ingress]
+mode = "direct"
+
+[store]
+type = "sqlite"
+path = "/root/.opensandbox/opensandbox.db"
