@@ -78,12 +78,12 @@ class LangfuseScoreSender:
         start_ns = end_ns - int(latency * 1_000_000) if valid_latency else end_ns
         span = {
             "traceId": payload["traceId"], "spanId": payload["observationId"],
-            "name": "ASu completed Agent run", "kind": 1,
+            "name": "ERP_OPENCLAW completed Agent run", "kind": 1,
             "startTimeUnixNano": str(start_ns), "endTimeUnixNano": str(end_ns),
             "attributes": [
-                attr("langfuse.observation.type", "agent"), attr("langfuse.trace.name", "ASu completed Agent run"),
+                attr("langfuse.observation.type", "agent"), attr("langfuse.trace.name", "ERP_OPENCLAW completed Agent run"),
                 attr("langfuse.user.id", payload["user_id"]), attr("langfuse.session.id", payload["session_id"]),
-                attr("langfuse.version", payload["version"]), attr("langfuse.environment", "asu-agent-lab"),
+                attr("langfuse.version", payload["version"]), attr("langfuse.environment", "erp-openclaw"),
                 attr("langfuse.observation.input", payload["input"]),
                 attr("langfuse.observation.output", payload["output"]),
                 attr("langfuse.observation.metadata.capture_kind", "completed_snapshot"),

@@ -1,5 +1,5 @@
 [project]
-name = "asu-agent-lab"
+name = "erp-openclaw"
 version = "0.1.0"
 description = "An auditable agent engineering lab with ERP actions, financial evidence and asynchronous evaluation."
 authors = [

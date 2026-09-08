@@ -49,7 +49,7 @@ AGENTS_MD_PATH = AGENT_DIR / "memory" / "AGENTS.md"
 # 服务配置
 # ============================================================
 # API 服务标题
-API_TITLE = "ASu Agent Lab"
+API_TITLE = "ERP_OPENCLAW"
 # API 版本
 API_VERSION = "1.0.0"
 # API 描述

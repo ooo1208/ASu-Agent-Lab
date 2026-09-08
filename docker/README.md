@@ -1,4 +1,4 @@
-# ASu Agent Lab 可选容器配置
+# ERP_OPENCLAW 可选容器配置
 
 从仓库根目录使用显式配置文件：
 

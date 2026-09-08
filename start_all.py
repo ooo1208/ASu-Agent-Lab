@@ -216,7 +216,7 @@ def wait_ready(child: Child, children: list[Child], timeout: float) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Run ASu Agent Lab locally; never installs dependencies or calls a model in demo mode")
+    parser = argparse.ArgumentParser(description="Run ERP_OPENCLAW locally; never installs dependencies or calls a model in demo mode")
     parser.add_argument("--mode", choices=("demo", "live"), default="demo")
     parser.add_argument("--erp", action="store_true", help="Also start the already-built synthetic Java ERP")
     parser.add_argument("--erp-jar", help="Path to an existing ERP jar, used with --erp")

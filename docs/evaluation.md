@@ -1,6 +1,6 @@
 # 独立评估 Worker、评分 Outbox 与发布门禁
 
-本模块为 ASu Agent Lab 新增的独立实现。借鉴公开项目中“业务运行与评估分离”的设计方向，未复制未授权的第三方评估源码。源码位于 `src/asu_eval/`，不依赖运行中的 LLM、MongoDB、Redis 或 Langfuse 即可完成本地闭环。
+本模块为 ERP_OPENCLAW 新增的独立实现。借鉴公开项目中“业务运行与评估分离”的设计方向，未复制未授权的第三方评估源码。源码位于 `src/asu_eval/`，不依赖运行中的 LLM、MongoDB、Redis 或 Langfuse 即可完成本地闭环。
 
 ## 1. 实际实现边界
 

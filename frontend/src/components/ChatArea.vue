@@ -7,14 +7,14 @@
         <div class="empty-layout">
           <div class="empty-visual">
             <span class="visual-index">01</span>
-            <div class="empty-icon"><img :src="whaleGirlHeroUrl" alt="ASu Agent Lab" /></div>
+            <div class="empty-icon"><img :src="whaleGirlHeroUrl" alt="ERP_OPENCLAW" /></div>
             <div class="visual-meta">
               <span>{{ demoMode ? '合成样例' : '业务数据' }}</span>
               <span>{{ demoMode ? '本地工作区' : '用户沙箱' }}</span>
             </div>
           </div>
           <div class="empty-copy">
-            <span class="empty-eyebrow">ASu Agent Lab</span>
+            <span class="empty-eyebrow">ERP_OPENCLAW</span>
             <h2>今天想先处理什么？</h2>
             <p>{{ demoMode ? '在证据工作台导入资料后，可输入关键词检索。输入“演示下单 2 件”，体验本地 ERP 审批流程。' : '描述采购或财务分析任务，系统通过专业 Agent 和业务工具完成分析与执行。' }}</p>
             <div class="system-strip" aria-label="系统能力">

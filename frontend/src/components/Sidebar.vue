@@ -3,10 +3,10 @@
     <!-- 侧边栏头部 -->
     <div class="sidebar-header">
       <div class="logo">
-        <img class="logo-icon" :src="whaleGirlLogoUrl" alt="ASu Agent Lab 标志" />
+        <img class="logo-icon" :src="whaleGirlLogoUrl" alt="ERP_OPENCLAW 标志" />
         <div class="logo-copy">
-          <strong>ASu Agent Lab</strong>
-          <span>智能体协作与评估工作台</span>
+          <strong>ERP_OPENCLAW</strong>
+          <span>多智能体企业采购助手</span>
         </div>
       </div>
       <button class="new-chat-btn" @click="$emit('new-chat')">

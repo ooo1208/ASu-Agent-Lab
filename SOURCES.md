@@ -1,5 +1,12 @@
 # 来源与实现边界
 
+## 项目命名依据
+
+- 官方课程的中文标题为[基于Harness架构多智能体企业采购助手](https://www.mashibing.com/course/2959)。官方页面未提供公开 Git 仓库地址，未确认官方英文仓库名。
+- `ERP_OPENCLAW` 沿用多个同源公开工程的现有命名，包括 [chenqianlei51525](https://github.com/chenqianlei51525/ERP_OPENCLAW)、[junjun0228](https://github.com/junjun0228/ERP_OPENCLAW) 和 [liqiangZzz](https://github.com/liqiangZzz/ERP_OPENCLAW)。仓库名相同不等于各自原创，也不能证明学员身份。
+- 更早的工程痕迹见 liqiangZzz 提交 `f2be64cead24afe55333a3cdc3c6289f248147dd`：[modules.xml](https://github.com/liqiangZzz/ERP_OPENCLAW/blob/f2be64cead24afe55333a3cdc3c6289f248147dd/.idea/modules.xml) 引用了 `ERP_OPENCLAW.iml`；[misc.xml](https://github.com/liqiangZzz/ERP_OPENCLAW/blob/f2be64cead24afe55333a3cdc3c6289f248147dd/.idea/misc.xml) 的 Python SDK 名也包含 `ERP_OPENCLAW`。因此选择已有工程名，而不自行翻译中文标题。
+- 本仓库仍是公开源码整合与工程补充版；更名不改变下述实际复用来源、许可证与实现边界。
+
 ## 直接复用
 
 - 来源：[KagaribiDev/procurepilot](https://github.com/KagaribiDev/procurepilot)

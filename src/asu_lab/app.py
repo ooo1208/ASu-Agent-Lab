@@ -45,7 +45,7 @@ def event(kind: str, **fields):
 
 def create_app():
     state = LocalState(database_path("demo"))
-    app = FastAPI(title="ASu Agent Lab — local synthetic demo", version="0.1.0")
+    app = FastAPI(title="ERP_OPENCLAW — local synthetic demo", version="0.1.0")
     bearer = HTTPBearer(auto_error=False)
 
     def current_user(credentials: HTTPAuthorizationCredentials | None = Depends(bearer)):
@@ -63,7 +63,7 @@ def create_app():
     @app.get("/health")
     @app.get("/api/lab/status")
     def status():
-        return {"status": "healthy", "mode": "demo", "model_calls_enabled": False, "project": "ASu Agent Lab"}
+        return {"status": "healthy", "mode": "demo", "model_calls_enabled": False, "project": "ERP_OPENCLAW"}
 
     @app.post("/api/auth/register")
     def register(body: AuthBody):

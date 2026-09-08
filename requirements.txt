@@ -36,7 +36,7 @@ beartype==0.22.9
     # via py-key-value-aio
 beautifulsoup4==4.14.3
     # via
-    #   asu-agent-lab
+    #   erp-openclaw
     #   markdownify
 blockbuster==1.5.27
     # via langgraph-runtime-inmem
@@ -81,7 +81,7 @@ cryptography==50.0.1
 cyclopts==4.23.0
     # via fastmcp
 deepagents==0.5.0
-    # via asu-agent-lab
+    # via erp-openclaw
 distro==1.9.0
     # via
     #   anthropic
@@ -101,9 +101,9 @@ email-validator==2.3.0
 exceptiongroup==1.3.1
     # via fastmcp
 fastapi==0.135.1
-    # via asu-agent-lab
+    # via erp-openclaw
 fastmcp==3.2.4
-    # via asu-agent-lab
+    # via erp-openclaw
 filetype==1.2.0
     # via langchain-google-genai
 forbiddenfruit==0.1.4 ; implementation_name == 'cpython'
@@ -138,7 +138,7 @@ httptools==0.8.0 ; sys_platform != 'win32'
 httpx==0.28.1
     # via
     #   anthropic
-    #   asu-agent-lab
+    #   erp-openclaw
     #   fastmcp
     #   google-genai
     #   langchain-core
@@ -219,11 +219,11 @@ langchain-core==1.6.0
 langchain-google-genai==4.3.4
     # via deepagents
 langchain-mcp-adapters==0.2.2
-    # via asu-agent-lab
+    # via erp-openclaw
 langchain-mongodb==0.11.0
     # via langgraph-checkpoint-mongodb
 langchain-openai==1.1.12
-    # via asu-agent-lab
+    # via erp-openclaw
 langchain-protocol==0.0.18
     # via
     #   langchain-core
@@ -235,13 +235,13 @@ langchain-text-splitters==1.1.2
     #   langchain-mongodb
 langgraph==1.2.11
     # via
-    #   asu-agent-lab
+    #   erp-openclaw
     #   langchain
     #   langgraph-api
     #   langgraph-runtime-inmem
 langgraph-api==0.13.4
     # via
-    #   asu-agent-lab
+    #   erp-openclaw
     #   langgraph-cli
 langgraph-checkpoint==4.2.0
     # via
@@ -251,9 +251,9 @@ langgraph-checkpoint==4.2.0
     #   langgraph-prebuilt
     #   langgraph-runtime-inmem
 langgraph-checkpoint-mongodb==0.4.0
-    # via asu-agent-lab
+    # via erp-openclaw
 langgraph-cli==0.4.31
-    # via asu-agent-lab
+    # via erp-openclaw
 langgraph-prebuilt==1.1.0
     # via langgraph
 langgraph-runtime-inmem==0.33.4
@@ -274,13 +274,13 @@ langsmith==0.11.1
 lark==1.3.1
     # via langchain-mongodb
 loguru==0.7.3
-    # via asu-agent-lab
+    # via erp-openclaw
 lxml==6.0.2
-    # via asu-agent-lab
+    # via erp-openclaw
 markdown-it-py==4.2.0
     # via rich
 markdownify==1.2.2
-    # via asu-agent-lab
+    # via erp-openclaw
 mcp==1.29.0
     # via
     #   fastmcp
@@ -300,7 +300,7 @@ openai==2.54.0
 openapi-pydantic==0.5.1
     # via fastmcp
 opensandbox==0.1.7
-    # via asu-agent-lab
+    # via erp-openclaw
 opentelemetry-api==1.42.1
     # via
     #   fastmcp
@@ -398,20 +398,20 @@ pygments==2.21.0
     #   rich-rst
 pyjwt==2.13.0
     # via
-    #   asu-agent-lab
+    #   erp-openclaw
     #   langgraph-api
     #   mcp
     #   zai-sdk
 pymongo==4.15.3
     # via
-    #   asu-agent-lab
+    #   erp-openclaw
     #   langchain-mongodb
     #   langgraph-checkpoint-mongodb
     #   pymongo-search-utils
 pymongo-search-utils==0.3.0
     # via langchain-mongodb
 pypdf==6.18.0
-    # via asu-agent-lab
+    # via erp-openclaw
 pyperclip==1.11.0
     # via fastmcp
 python-dateutil==2.9.0.post0
@@ -420,7 +420,7 @@ python-dateutil==2.9.0.post0
     #   opensandbox
 python-dotenv==1.2.3
     # via
-    #   asu-agent-lab
+    #   erp-openclaw
     #   fastmcp
     #   langgraph-cli
     #   pydantic-settings
@@ -432,7 +432,7 @@ pywin32-ctypes==0.2.3 ; sys_platform == 'win32'
     # via keyring
 pyyaml==6.0.3
     # via
-    #   asu-agent-lab
+    #   erp-openclaw
     #   fastmcp
     #   jsonschema-path
     #   langchain-classic
@@ -446,7 +446,7 @@ regex==2026.7.19
     # via tiktoken
 requests==2.33.0
     # via
-    #   asu-agent-lab
+    #   erp-openclaw
     #   google-auth
     #   google-genai
     #   langchain-classic
@@ -556,7 +556,7 @@ uuid-utils==0.17.0
     #   langsmith
 uvicorn==0.42.0
     # via
-    #   asu-agent-lab
+    #   erp-openclaw
     #   fastmcp
     #   langgraph-api
     #   mcp
@@ -583,7 +583,7 @@ xxhash==4.0.1
     #   langgraph
     #   langsmith
 zai-sdk==0.2.2
-    # via asu-agent-lab
+    # via erp-openclaw
 zipp==4.1.0 ; python_full_version < '3.12'
     # via importlib-metadata
 zstandard==0.25.0

@@ -42,4 +42,4 @@ Python 有一条第三方 Starlette/httpx 迁移提示，不影响本次测试�
 - Docker 镜像构建/Compose 启动、OpenSandbox 真容器热恢复、MySQL 连接。
 - 真实银行数据、授信决策效果、生产 RBAC、多节点高并发和灾备。
 
-Docker/YAML 文件已做本地语法与引用检查；这不等同于容器执行。章节标签表示实际源码整理顺序，不是原课程的历史提交。后续 GitHub Actions 结果以 [运行记录](https://github.com/ooo1208/ASu-Agent-Lab/actions/workflows/quality.yml) 为准。
+Docker/YAML 文件已做本地语法与引用检查；这不等同于容器执行。章节标签表示实际源码整理顺序，不是原课程的历史提交。后续 GitHub Actions 结果以 [运行记录](https://github.com/ooo1208/ERP_OPENCLAW/actions/workflows/quality.yml) 为准。

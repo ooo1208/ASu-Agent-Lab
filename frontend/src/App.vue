@@ -17,7 +17,7 @@
     <!-- 主内容区 -->
     <main class="main-content">
       <header class="lab-navigation">
-        <a class="lab-brand" href="#" @click.prevent="activePage = 'chat'">ASu <span>Agent Lab</span></a>
+        <a class="lab-brand" href="#" @click.prevent="activePage = 'chat'">ERP_OPENCLAW <span>多智能体企业采购助手</span></a>
         <nav aria-label="工作区导航">
           <button v-for="item in workspacePages" :key="item.id" :class="{ active: activePage === item.id }" :aria-current="activePage === item.id ? 'page' : undefined" @click="activePage = item.id">{{ item.label }}</button>
         </nav>

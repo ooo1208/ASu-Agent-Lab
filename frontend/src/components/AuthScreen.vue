@@ -3,9 +3,9 @@
     <section class="auth-brand" aria-labelledby="brand-title">
       <div class="brand-grid" aria-hidden="true"></div>
       <header class="brand-header">
-        <a class="brand-mark" href="/" aria-label="ASu Agent Lab 首页">
+        <a class="brand-mark" href="/" aria-label="ERP_OPENCLAW 首页">
           <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 8.5h18v11H14l-7 5v-16Z"/><path d="M12 13h8M12 17h5"/></svg>
-          <span>ASu Agent Lab</span>
+          <span>ERP_OPENCLAW</span>
         </a>
         <span class="brand-meta">智能体协作与评估工作台</span>
       </header>
@@ -17,8 +17,8 @@
           <p class="brand-note">连接业务数据、专业 Agent 与可回查证据，在你的工作空间里完成分析、协作和持续改进。</p>
         </div>
 
-        <div class="workflow" aria-label="ASu 智能协作流程">
-          <div class="workflow-heading"><span>ASu 智能协作流程</span><span>3 个阶段</span></div>
+        <div class="workflow" aria-label="企业采购协作流程">
+          <div class="workflow-heading"><span>企业采购协作流程</span><span>3 个阶段</span></div>
           <ol>
             <li><span class="workflow-index">01</span><div><strong>理解需求</strong><p>结合当前会话与长期偏好记忆</p></div></li>
             <li><span class="workflow-index">02</span><div><strong>证据分析</strong><p>查找原文、复核数字与专业 Agent 协同</p></div></li>
@@ -34,7 +34,7 @@
 
     <section class="auth-panel">
       <div class="panel-frame">
-        <div class="panel-topline"><span>{{ mode === 'login' ? '账号登录' : '账号注册' }}</span><span>ASu Agent Lab</span></div>
+        <div class="panel-topline"><span>{{ mode === 'login' ? '账号登录' : '账号注册' }}</span><span>ERP_OPENCLAW</span></div>
         <form class="auth-form" @submit.prevent="submit">
           <div class="form-heading">
             <div class="form-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3 27 8.5v7.7c0 6.5-4.5 10.7-11 12.8C9.5 26.9 5 22.7 5 16.2V8.5L16 3Z"/><path d="m11.5 16 3 3 6.5-7"/></svg></div>

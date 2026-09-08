@@ -1,8 +1,12 @@
-# ASu Agent Lab
+# ERP_OPENCLAW
+
+**基于Harness架构多智能体企业采购助手**
+
+工程名沿用多个同源公开实现及早期工程配置中的 `ERP_OPENCLAW`，中文名称对应[码士课程标题](https://www.mashibing.com/course/2959)。本次未查到官方公开仓库地址；英文名是根据公开工程线索作出的判断，详见[命名依据](SOURCES.md#项目命名依据)。
 
 **可回查证据、可审批执行、可持续评估的多 Agent 实战项目。**
 
-[![Quality checks](https://github.com/ooo1208/ASu-Agent-Lab/actions/workflows/quality.yml/badge.svg)](https://github.com/ooo1208/ASu-Agent-Lab/actions/workflows/quality.yml)
+[![Quality checks](https://github.com/ooo1208/ERP_OPENCLAW/actions/workflows/quality.yml/badge.svg)](https://github.com/ooo1208/ERP_OPENCLAW/actions/workflows/quality.yml)
 
 将采购 ERP、DeepAgents、MCP、用户沙箱、财务证据和异步评估接成一个可操作的工作台。包含无需模型密钥的本地演示，也提供接入真实模型的 live 运行方式。
 
@@ -45,8 +49,8 @@ flowchart LR
 推荐 Python 3.11、Node.js 22.12+、Java 21、Maven 3.9、uv 0.11.2。
 
 ```powershell
-git clone https://github.com/ooo1208/ASu-Agent-Lab.git
-cd ASu-Agent-Lab
+git clone https://github.com/ooo1208/ERP_OPENCLAW.git
+cd ERP_OPENCLAW
 uv sync --locked --index-url https://pypi.org/simple
 npm --prefix frontend ci
 mvn -f erp-service/pom.xml package

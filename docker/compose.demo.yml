@@ -1,4 +1,4 @@
-name: asu-agent-lab-demo
+name: erp-openclaw-demo
 
 services:
   erp:
@@ -18,7 +18,7 @@ services:
       - erp-data:/app/data
 
   demo-api:
-    image: asu-agent-lab-python:local
+    image: erp-openclaw-python:local
     build:
       context: ..
       dockerfile: docker/Dockerfile.python
@@ -44,7 +44,7 @@ services:
       start_period: 30s
 
   worker:
-    image: asu-agent-lab-python:local
+    image: erp-openclaw-python:local
     build:
       context: ..
       dockerfile: docker/Dockerfile.python

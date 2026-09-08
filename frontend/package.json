@@ -1,7 +1,7 @@
 {
-  "name": "asu-agent-lab-ui",
+  "name": "erp-openclaw-ui",
   "version": "1.0.0",
-  "description": "ASu Agent Lab evidence and evaluation workspace",
+  "description": "ERP_OPENCLAW evidence and evaluation workspace",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,5 +1,5 @@
 # Optional infrastructure for a host-run live Agent. This is not a production deployment.
-name: asu-agent-lab-live-infra
+name: erp-openclaw-live-infra
 
 services:
   sandbox-image:
