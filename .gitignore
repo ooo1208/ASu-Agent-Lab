@@ -1,0 +1,151 @@
+# ============================================================
+# procurepilot — Git ignore rules
+# ============================================================
+
+# ----------------------------
+# Secrets and local environment
+# ----------------------------
+# Never commit real model/API credentials.
+.env
+.env.*
+!.env.example
+!**/.env.example
+
+# Local secret/certificate files.
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.json
+secrets.yaml
+secrets.yml
+
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments.
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging/build output.
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+# Test, coverage, type-check and lint caches.
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Jupyter/IPython.
+.ipynb_checkpoints/
+.python_history
+
+# ----------------------------
+# Node.js / Vue / Vite
+# ----------------------------
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+
+# Keep dependency lock files tracked:
+# frontend/package-lock.json, uv.lock
+
+# ----------------------------
+# LangGraph / Agent runtime state
+# ----------------------------
+.langgraph_api/
+
+# Agent-generated files downloaded from a user's private sandbox.
+# The directory is created automatically by download_sandbox_file.
+src/download/
+
+# Runtime logs and temporary output.
+*.log
+logs/
+temp/
+tmp/
+.tmp/
+.tmp-*/
+
+# ----------------------------
+# IDE and editor settings
+# ----------------------------
+.idea/
+.vscode/
+.jbeval/
+*.iml
+*.ipr
+*.iws
+*.swp
+*.swo
+*~
+
+# ----------------------------
+# Operating-system metadata
+# ----------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+ehthumbs_vista.db
+
+# ----------------------------
+# Local databases and process files
+# ----------------------------
+*.sqlite
+*.sqlite3
+*.db
+*.pid
+*.pid.lock
+.local/
+data/
+target/
+*.sqlite3-*
+*.db-*
+
+# Docker/OpenSandbox data is stored in named volumes and must not be copied
+# into the repository if a local bind-mounted data directory is introduced.
+docker/data/
+docker/mongodb-data/
+docker/opensandbox-data/
+
+# ----------------------------
+# Project policy
+# ----------------------------
+# Intentionally tracked:
+# - README.md and docs/
+# - reports/ benchmark evidence
+# - motorparts_db.sql sample ERP database
+# - docker/ deployment configuration
+# - frontend/public/assets/ product assets
+# - requirements.txt, uv.lock and frontend/package-lock.json

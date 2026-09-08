@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: ${ERP_DB_URL:jdbc:mysql://127.0.0.1:3306/asu_erp?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC}
+    username: ${ERP_DB_USER:asu_erp}
+    password: ${ERP_DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+erp:
+  seed-enabled: ${ERP_SEED_ENABLED:false}
