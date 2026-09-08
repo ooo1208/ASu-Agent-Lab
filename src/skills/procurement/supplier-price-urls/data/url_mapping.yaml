@@ -1,0 +1,70 @@
+{
+  "data_kind": "synthetic",
+  "as_of": "2026-09-08",
+  "quote_base_url": "http://127.0.0.1:8086",
+  "mappings": [
+    {
+      "part_id": 1,
+      "part_name": "陶瓷刹车片",
+      "supplier_id": 1,
+      "supplier": "示例精工供应商",
+      "url": "http://127.0.0.1:8086/supplier-1-part-1.html"
+    },
+    {
+      "part_id": 1,
+      "part_name": "陶瓷刹车片",
+      "supplier_id": 2,
+      "supplier": "示例动力供应商",
+      "url": "http://127.0.0.1:8086/supplier-2-part-1.html"
+    },
+    {
+      "part_id": 1,
+      "part_name": "陶瓷刹车片",
+      "supplier_id": 3,
+      "supplier": "示例传动供应商",
+      "url": "http://127.0.0.1:8086/supplier-3-part-1.html"
+    },
+    {
+      "part_id": 2,
+      "part_name": "铝合金制动盘",
+      "supplier_id": 1,
+      "supplier": "示例精工供应商",
+      "url": "http://127.0.0.1:8086/supplier-1-part-2.html"
+    },
+    {
+      "part_id": 2,
+      "part_name": "铝合金制动盘",
+      "supplier_id": 2,
+      "supplier": "示例动力供应商",
+      "url": "http://127.0.0.1:8086/supplier-2-part-2.html"
+    },
+    {
+      "part_id": 2,
+      "part_name": "铝合金制动盘",
+      "supplier_id": 3,
+      "supplier": "示例传动供应商",
+      "url": "http://127.0.0.1:8086/supplier-3-part-2.html"
+    },
+    {
+      "part_id": 3,
+      "part_name": "强化传动链条",
+      "supplier_id": 1,
+      "supplier": "示例精工供应商",
+      "url": "http://127.0.0.1:8086/supplier-1-part-3.html"
+    },
+    {
+      "part_id": 3,
+      "part_name": "强化传动链条",
+      "supplier_id": 2,
+      "supplier": "示例动力供应商",
+      "url": "http://127.0.0.1:8086/supplier-2-part-3.html"
+    },
+    {
+      "part_id": 3,
+      "part_name": "强化传动链条",
+      "supplier_id": 3,
+      "supplier": "示例传动供应商",
+      "url": "http://127.0.0.1:8086/supplier-3-part-3.html"
+    }
+  ]
+}
