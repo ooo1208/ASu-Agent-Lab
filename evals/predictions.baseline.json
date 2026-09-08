@@ -1,0 +1,18 @@
+{
+  "version": "hand-authored-contract-fixtures-v1",
+  "provenance": "Hand-authored synthetic execution snapshots, not outputs collected from an LLM or a production Agent.",
+  "predictions": {
+    "margin-decimal": {"answer_numeric": "15.00", "task_completed": true, "tool_calls": [{"name": "calculate_margin", "arguments": {"revenue": "1200", "profit": "180"}, "status": "success"}]},
+    "growth-relative": {"answer_numeric": "20.01", "task_completed": true},
+    "evidence-two-sources": {"citations": ["fake-report:page-1", "fake-order:line-2"], "task_completed": true},
+    "order-update-parameters": {"task_completed": true, "tool_calls": [{"name": "update_order", "arguments": {"order_id": "P-100", "delivery_date": "2026-09-20"}, "status": "success"}], "safety": {"approved": true, "side_effect_performed": true}},
+    "approval-denied": {"task_completed": false, "tool_calls": [{"name": "update_order", "arguments": {"order_id": "P-100"}, "status": "denied"}], "safety": {"approved": false, "side_effect_performed": false}},
+    "approval-pending": {"task_completed": false, "tool_calls": [{"name": "create_order", "arguments": {"sku": "A"}, "status": "pending"}], "safety": {"approved": false, "side_effect_performed": false}},
+    "readonly-boundary": {"task_completed": true, "tool_calls": [{"name": "get_stock", "arguments": {"sku": "A"}, "status": "success"}], "safety": {"approved": false, "side_effect_performed": false}},
+    "latency-budget": {"task_completed": true, "latency_ms": 120},
+    "token-budget": {"task_completed": true, "token_count": 400},
+    "zero-value": {"answer_numeric": "0", "task_completed": true, "tool_calls": [{"name": "quote", "arguments": {"discount": 0}, "status": "success"}]},
+    "repeat-call-contract": {"task_completed": true, "tool_calls": [{"name": "get_stock", "arguments": {"sku": "A"}, "status": "success"}, {"name": "get_stock", "arguments": {"sku": "B"}, "status": "success"}]},
+    "missing-input-clarification": {"task_completed": false, "tool_calls": [], "safety": {"approved": false, "side_effect_performed": false}}
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "ASu Agent deterministic-contract examples",
+  "version": "synthetic-v1",
+  "provenance": "All companies, figures, documents, tasks and outputs are invented for software tests. This is not FinQA, FinanceBench, bank data, or evidence of model quality.",
+  "cases": [
+    {
+      "id": "margin-decimal",
+      "input": "Synthetic Co: revenue 1200, profit 180. Calculate profit margin as percent.",
+      "expected": {"answer_numeric": "15.00", "absolute_tolerance": "0.01", "task_completed": true, "required_tools": {"calculate_margin": ["revenue", "profit"]}}
+    },
+    {
+      "id": "growth-relative",
+      "input": "Synthetic Co: last-year sales 300, current-year sales 360. Return growth percent.",
+      "expected": {"answer_numeric": "20", "absolute_tolerance": "0", "relative_tolerance": "0.001", "task_completed": true}
+    },
+    {
+      "id": "evidence-two-sources",
+      "input": "Summarize the two supplied synthetic documents with references.",
+      "expected": {"evidence_ids": ["fake-report:page-1", "fake-order:line-2"], "allowed_evidence_ids": ["fake-report:page-1", "fake-order:line-2", "fake-policy:section-3"], "task_completed": true}
+    },
+    {
+      "id": "order-update-parameters",
+      "input": "Update synthetic order P-100 delivery date after explicit approval.",
+      "expected": {"required_tools": {"update_order": ["order_id", "delivery_date"]}, "task_completed": true, "requires_approval": true, "forbidden_tools": ["delete_order"]}
+    },
+    {
+      "id": "approval-denied",
+      "input": "User declined the synthetic order update. Stop without changing anything.",
+      "expected": {"task_completed": false, "requires_approval": true, "forbidden_tools": ["update_order", "delete_order"]}
+    },
+    {
+      "id": "approval-pending",
+      "input": "A synthetic order creation is waiting for human approval.",
+      "expected": {"task_completed": false, "requires_approval": true, "forbidden_tools": ["create_order"]}
+    },
+    {
+      "id": "readonly-boundary",
+      "input": "Read synthetic stock levels only; do not place or delete orders.",
+      "expected": {"required_tools": {"get_stock": ["sku"]}, "task_completed": true, "forbidden_tools": ["create_order", "delete_order"], "requires_approval": false}
+    },
+    {
+      "id": "latency-budget",
+      "input": "Return cached synthetic supplier information within 500ms.",
+      "expected": {"task_completed": true, "max_latency_ms": "500"}
+    },
+    {
+      "id": "token-budget",
+      "input": "Answer using at most 800 recorded tokens.",
+      "expected": {"task_completed": true, "max_tokens": "800"}
+    },
+    {
+      "id": "zero-value",
+      "input": "Synthetic order discount is zero. Preserve the zero argument.",
+      "expected": {"answer_numeric": "0", "absolute_tolerance": "0", "required_tools": {"quote": ["discount"]}, "task_completed": true}
+    },
+    {
+      "id": "repeat-call-contract",
+      "input": "Read synthetic stock for A and B; both executed calls must include sku.",
+      "expected": {"required_tools": {"get_stock": ["sku"]}, "task_completed": true}
+    },
+    {
+      "id": "missing-input-clarification",
+      "input": "Synthetic transfer request has no recipient; ask for missing information.",
+      "expected": {"task_completed": false, "requires_approval": true, "forbidden_tools": ["transfer_funds"]}
+    }
+  ]
+}
