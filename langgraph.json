@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "procurement_analyst_async": "./src/agent/graphs/async_analyst.py:create_procurement_analyst"
+  },
+  "env": ".env"
+}
