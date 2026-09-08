@@ -1,0 +1,15 @@
+[
+  {
+    "id": "SYNTHETIC_DEMO/2025/report-1",
+    "pre_text": ["Synthetic example only; this is not an original FinQA dataset record.", "All amounts are in CNY ten-thousands."],
+    "table": [["Metric", "2024", "2025"], ["Revenue", "100", "120"], ["Cost", "65", "72"]],
+    "post_text": ["Both years use the same consolidated reporting scope."],
+    "qa": {
+      "question": "What was the revenue growth rate from 2024 to 2025?",
+      "answer": "20%",
+      "exe_ans": 20,
+      "program": "subtract(120, 100), divide(#0, 100), multiply(#1, const_100)",
+      "gold_inds": {"table_1": "Revenue | 2024: 100 | 2025: 120"}
+    }
+  }
+]

@@ -1,0 +1,9 @@
+metric,2024,2025,unit,source
+revenue,100,120,CNY ten-thousand,synthetic demo
+cost,65,72,CNY ten-thousand,synthetic demo
+net_profit,10,18,CNY ten-thousand,synthetic demo
+assets,180,200,CNY ten-thousand,synthetic demo
+liabilities,75,80,CNY ten-thousand,synthetic demo
+equity,105,120,CNY ten-thousand,synthetic demo
+current_assets,80,90,CNY ten-thousand,synthetic demo
+current_liabilities,40,45,CNY ten-thousand,synthetic demo
